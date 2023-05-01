@@ -1,0 +1,11 @@
+print('This program adds two numbers for Jaehyeok.')
+operand1 = int(input('number 1: '))
+operand2 = int(input('number 2: '))
+print(f'{operand1} + {operand2} = {operand1 +operand2}')
+
+print('This program adds two numbers for Jaehyeok again.')
+operand1 = input('number 1: ')
+print(operand1)
+print(type(operand1))
+operand2 = input('number 2: ')
+print(f'{operand1} + {operand2} = {operand1 + operand2}')
