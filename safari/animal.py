@@ -13,3 +13,10 @@ class Animal:
 class Zebra(Animal):
     def move(self,occupancy_grid):
         print('<<<NOT IMPLEMENTED>>>')
+
+    def breed(self,x, y):
+        print('<<<NOT IMPLEMENTED>>>')
+        
+class Lion(Animal):
+    def move(self):
+        print('<<< NOT IMPLEMENTED >>>')
