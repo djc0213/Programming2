@@ -38,7 +38,7 @@ class CircleOfLife:
 
     def step_breed(self):
         print_TODO('step_breed()')
-        for animal in self.zebras +self.lions:
+        for animal in self.zebras + self.lions:
             print_TODO('get empty neighbor')
             x, y = 0, 0
             animal.breed(x, y)
