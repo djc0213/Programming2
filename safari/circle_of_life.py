@@ -1,4 +1,5 @@
 from animal import Animal
+from animal import Manager
 
 def print_TODO(todo):
     print(f'<<<NOT IMPLEMENTED: {todo} >>>')
@@ -12,7 +13,7 @@ class CircleOfLife:
         self.lions = [Animal(0, 0) for _ in range(num_lions)]
         self.timestep = 0
         print('Welcome to AIE Safari!')
-        print(f'\tword size = {world_size}')
+        print(f'\tworld size = {world_size}')
         print(f'\tnumber of zebras = {len(self.zebras)}')
         print(f'\number of lions = {len(self.lions)}')
 
@@ -53,8 +54,5 @@ class CircleOfLife:
             self.display()
 
 if __name__ == '__main__':
-    safari = CircleOfLife(5, 5, 2)
-    #safari.display()
-    #safari.step_move()
-    #safari.step_breed()
+    safari = CircleOfLife(Manager.width(), num_zebras = 5, num_lions = 2)
     safari.run(2)

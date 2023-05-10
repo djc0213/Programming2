@@ -1,9 +1,8 @@
 import pandas as pd
 
 class Manager:
-    def plot_dataframe(self):
-        df = pd.DataFrame({"x": range(10), "y": range(10)})
-        ax = df.plot(x="x", y="y", grid=True, color='gray')
+    def width():
+        return 20
 
 class Animal:
     def __init__(self, x, y):
@@ -27,6 +26,3 @@ class Zebra(Animal):
 class Lion(Animal):
     def move(self):
         print('<<< NOT IMPLEMENTED >>>')
-
-manager = Manager()
-manager.plot_dataframe()
