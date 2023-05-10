@@ -2,7 +2,7 @@ import pandas as pd
 
 class Manager:
     def plot_dataframe(self):
-        df = pd.DataFram({"x": range(10), "y": range(10)})
+        df = pd.DataFrame({"x": range(10), "y": range(10)})
         ax = df.plot(x="x", y="y", grid=True, color='gray')
 
 class Animal:
