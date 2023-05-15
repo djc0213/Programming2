@@ -50,4 +50,4 @@ class CircleOfLife:
 
 if __name__ == '__main__':
     safari = CircleOfLife(20, 100, 2)
-    safari.run(7)
+    safari.run(6)
