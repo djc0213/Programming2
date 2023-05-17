@@ -35,9 +35,16 @@ class Manager:
 
     def display_grid(self, grid):
         max_width = max(len(cell) for row in grid for cell in row)
-        
         # Create the horizontal line
         horizontal_line = "+" + "+".join(["-" * (max_width + 2)] * len(grid[0])) + "+"
+        # Print column coordinates at the top
+        print(' ', end='')
+        for i in range(1, self.world_size + 1):
+            if i < 10:
+                print(f' {i}', end='  ')
+            elif i >= 10:
+                print(f' {i}', end=' ')
+        print()
 
         print(horizontal_line)
         for row in grid:
