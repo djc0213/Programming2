@@ -22,7 +22,6 @@ class CircleOfLife:
         print(f'\tnumber of lions = {len(self.lions)}')
         self.manager = Manager(world_size=self.world_size, num_zebras=self.num_zebras, num_lions=self.num_lions)
         self.grid = self.manager.generate_grid()
-        
     def display(self):
         os.system('cls')
         print(f'Clock: {self.timestep}')
@@ -50,14 +49,22 @@ class CircleOfLife:
 
         self.grid = new_grid  # Update the grid with the new positions
 
+    def move_animals(self):
+        for zebra in self.manager.zebras:
+            zebra.move(self.grid)
+        for lion in self.manager.lions:
+            lion.move(self.grid)
+
+
     def run(self, num_timesteps=100):
         os.system('cls')
         self.display()
         for _ in range(num_timesteps):
             self.timestep += 1
-            self.step_breed()  # Move zebras and lions to new positions
-            self.display()        
+            self.move_animals()
+            self.display()
+ 
 
 if __name__ == '__main__':
-    safari = CircleOfLife(20, 10, 2)
-    safari.run(20)
+    safari = CircleOfLife(20, 1, 0)
+    safari.run(1000)
