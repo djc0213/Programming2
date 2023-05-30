@@ -26,6 +26,7 @@ class CircleOfLife:
     def display(self):
         os.system('cls')
         print(f'Clock: {self.timestep}')
+        print(f'Zebras: {self.num_zebras}\nLions:{self.num_lions}')
         self.manager.display_grid(self.grid)
         key = input('enter [q] to quit:')
         if key == 'q':
@@ -37,6 +38,15 @@ class CircleOfLife:
         for lion in self.manager.lions:
             lion.move(self.grid)
 
+    def breed_animals(self):
+        for zebra in self.manager.zebras:
+            zebra.increase_counters(self.grid)
+            if zebra.breed_counter == zebra.BREED_INTERVAL:
+                zebra.breed_counter = 0  # Reset the breed counter
+                new_zebra = zebra.zebra_breed(self.grid)
+                self.manager.zebras.append(new_zebra)
+
+
 
     def run(self, num_timesteps=100):
         os.system('cls')
@@ -44,9 +54,10 @@ class CircleOfLife:
         for _ in range(num_timesteps):
             self.timestep += 1
             self.move_animals()
+            self.breed_animals()
             self.display()
  
 
 if __name__ == '__main__':
-    safari = CircleOfLife(20, 10, 2)
+    safari = CircleOfLife(7, 5, 2)
     safari.run(1000)

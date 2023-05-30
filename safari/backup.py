@@ -73,8 +73,8 @@ class Animal:
         new_x, new_y = new_coordinate
         target_animal = grid[new_x][new_y]
 
-        # if target_animal == 'Z':
-        #     self.consume_zebra(new_x, new_y, grid)
+        if target_animal == 'Z':
+            self.consume_zebra(new_x, new_y, grid)
 
         grid[self.x][self.y] = ' '  # Clear current cell
         self.x = new_x
@@ -91,14 +91,14 @@ class Animal:
                 neighbors.append((new_x, new_y))
         return neighbors
 
-    # def consume_zebra(self, x, y, grid):
+    #def consume_zebra(self, x, y, grid):
         
-    #     for zebra in self.manager.zebras:
-    #         if zebra.x == x and zebra.y == y:
-    #             self.manager.zebras.remove(zebra)
-    #             break
-    #     grid[x][y] = ' '
-    #     self.eat_counter = 0  # Reset the eat counter
+        # for zebra in self.manager.zebras:
+        #     if zebra.x == x and zebra.y == y:
+        #         self.manager.zebras.remove(zebra)
+        #         break
+        # grid[x][y] = ' '
+        # self.eat_counter = 0  # Reset the eat counter
 
     def get_empty_neighbors(self, grid):
         neighbors = []
